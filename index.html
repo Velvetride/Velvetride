@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velvet Rides Luxury Car Rental</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+        }
+        header {
+            position: relative;
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        }
+        header .logo {
+            max-height: 80px;
+        }
+        header h1 {
+            font-size: 50px;
+            margin: 20px 0;
+            background: linear-gradient(90deg, #ff007f, #ff66b2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        header p {
+            font-size: 20px;
+            color: #ff99cc;
+        }
+        header .info-banner {
+            margin-top: 20px;
+            background-color: #ff007f;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        .search-bar {
+            margin: 20px auto;
+            text-align: center;
+        }
+        .search-bar input {
+            width: 50%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ff66b2;
+            border-radius: 5px;
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+        .search-bar input::placeholder {
+            color: #ff99cc;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #1a1a1a;
+            padding: 10px 0;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        }
+        nav a {
+            color: #ff99cc;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background-color: #ff007f;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .logos {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+            padding: 0 20px;
+        }
+        .logos a {
+            display: block;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+        .logos a:hover {
+            transform: scale(2);
+        }
+        .logos img {
+            width: 100%;
+            max-height: 100px;
+            object-fit: contain;
+            background-color: #1a1a1a;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255, 0, 127, 0.7);
+        }
+        .featured-section {
+            background-color: #1a1a1a;
+            padding: 30px;
+            text-align: center;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(255, 0, 127, 0.7);
+        }
+        .featured-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #ff99cc;
+        }
+        .featured-section p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #ffccdd;
+        }
+        .customer-reviews {
+            background-color: #1a1a1a;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(255, 0, 127, 0.7);
+        }
+        .customer-reviews h2 {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ff99cc;
+        }
+        .review {
+            margin-bottom: 20px;
+            font-style: italic;
+            color: #ffccdd;
+        }
+        footer {
+            background-color: #1a1a1a;
+            color: #ff99cc;
+            text-align: center;
+            padding: 20px 0;
+        }
+        footer .links a {
+            color: #ff99cc;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer .links a:hover {
+            text-decoration: underline;
+            color: #ff66b2;
+        }
+        footer .newsletter input {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ff66b2;
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+        footer .newsletter button {
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #ff007f;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        footer .newsletter button:hover {
+            background-color: #ff66b2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img class="logo" src="/mnt/data/company logo.png" alt="Velvet Rides Logo">
+        <h1>Velvet Rides Luxury Car Rental</h1>
+        <p>Ride with elegance, drive with class.</p>
+        <div class="info-banner">Deal with us directly, avoid the commission.</div>
+    </header>
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search..." onkeyup="filterResults()">
+        <div class="search-results" id="search-results">
+            <ul id="results-list"></ul>
+        </div>
+    </div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#fleet">Fleet</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="container">
+        <div class="logos">
+            <a href="carlist1.html"><img src="logo1.png" alt="Company 1"></a>
+            <a href="carlist2.html"><img src="logo2.png" alt="Company 2"></a>
+            <a href="carlist3.html"><img src="logo3.png" alt="Company 3"></a>
+            <a href="carlist4.html"><img src="logo4.png" alt="Company 4"></a>
+            <a href="carlist5.html"><img src="logo5.png" alt="Company 5"></a>
+            <a href="carlist6.html"><img src="logo6.png" alt="Company 6"></a>
+            <a href="carlist7.html"><img src="logo7.png" alt="Company 7"></a>
+            <a href="carlist8.html"><img src="logo8.png" alt="Company 8"></a>
+            <a href="carlist9.html"><img src="logo9.png" alt="Company 9"></a>
+            <a href="carlist10.html"><img src="logo10.png" alt="Company 10"></a>
+            <a href="carlist11.html"><img src="logo11.png" alt="Company 11"></a>
+            <a href="carlist12.html"><img src="logo12.png" alt="Company 12"></a>
+            <a href="carlist13.html"><img src="logo13.png" alt="Company 13"></a>
+            <a href="carlist14.html"><img src="logo14.png" alt="Company 14"></a>
+            <a href="carlist15.html"><img src="logo15.png" alt="Company 15"></a>
+            <a href="carlist16.html"><img src="logo16.png" alt="Company 16"></a>
+            <a href="carlist17.html"><img src="logo17.png" alt="Company 17"></a>
+            <a href="carlist18.html"><img src="logo18.png" alt="Company 18"></a>
+            <a href="carlist19.html"><img src="logo19.png" alt="Company 19"></a>
+            <a href="carlist20.html"><img src="logo20.png" alt="Company 20"></a>
+        </div>
+    </div>
+    <div class="featured-section">
+        <h2>Why Choose Velvet Rides?</h2>
+        <p>Experience unparalleled luxury and comfort with our wide range of premium vehicles. Whether you're looking for a self-drive rental or a chauffeur service, we ensure a seamless and memorable journey tailored to your needs. Book with us for the ultimate driving experience in Dubai!</p>
+    </div>
+    <div class="customer-reviews">
+        <h2>Customer Reviews</h2>
+        <div class="review">"Excellent service and top-notch vehicles!" - John D.</div>
+        <div class="review">"Highly recommend Velvet Rides for luxury car rentals." - Sarah K.</div>
+        <div class="review">"A seamless experience from booking to return." - Ahmed A.</div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Velvet Rides Luxury Car Rental. All Rights Reserved.</p>
+        <div class="links">
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="newsletter">
+            <p>Subscribe to our Newsletter:</p>
+            <form>
+                <input type="email" placeholder="your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </footer>
+</body>
+</html>
