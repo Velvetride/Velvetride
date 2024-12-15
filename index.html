@@ -44,6 +44,53 @@
             font-weight: bold;
             border-radius: 5px;
         }
+        header .welcome {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            font-size: 24px;
+            font-style: italic;
+            color: #ff99cc;
+        }
+        header .language-options {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+        header .language-options select {
+            padding: 5px;
+            font-size: 16px;
+        }
+        header .whatsapp-link {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            font-size: 16px;
+            text-decoration: none;
+            color: #25D366;
+        }
+        .running-car {
+            position: relative;
+            overflow: hidden;
+            height: 100px;
+            margin: 20px 0;
+        }
+        .running-car img {
+            position: absolute;
+            width: 150px;
+            animation: car-move 5s linear infinite;
+        }
+        @keyframes car-move {
+            0% {
+                left: 100%;
+            }
+            50% {
+                left: -150px;
+            }
+            100% {
+                left: 100%;
+            }
+        }
         .search-bar {
             margin: 20px auto;
             text-align: center;
@@ -176,6 +223,16 @@
             background-color: #ff66b2;
         }
     </style>
+    <script>
+        function changeLanguage(language) {
+            // Simulating a language change
+            alert(`Language changed to ${language}`);
+        }
+        function filterResults() {
+            const searchValue = document.getElementById("search-input").value;
+            alert(`Searching for: ${searchValue}`);
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -183,7 +240,26 @@
         <h1>Velvet Rides Luxury Car Rental</h1>
         <p>Ride with elegance, drive with class.</p>
         <div class="info-banner">Deal with us directly, avoid the commission.</div>
+        <div class="welcome">Welcome</div>
+        <div class="language-options">
+            <select onchange="changeLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="ar">Arabic</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+                <option value="it">Italian</option>
+                <option value="es">Spanish</option>
+                <option value="zh">Chinese</option>
+                <option value="jp">Japanese</option>
+                <option value="ru">Russian</option>
+                <option value="pt">Portuguese</option>
+            </select>
+        </div>
+        <a href="https://wa.me/" class="whatsapp-link">Contact us on WhatsApp</a>
     </header>
+    <div class="running-car">
+        <img src="https://via.placeholder.com/150" alt="Running Car">
+    </div>
     <div class="search-bar">
         <input type="text" id="search-input" placeholder="Search..." onkeyup="filterResults()">
         <div class="search-results" id="search-results">
@@ -191,10 +267,10 @@
         </div>
     </div>
     <nav>
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#fleet">Fleet</a>
-        <a href="#contact">Contact</a>
+        <a href="#services">Service Details</a>
+        <a href="#fleet">Our Fleet</a>
+        <a href="#brands">Brands</a>
+        <a href="#contact">Contact Us</a>
     </nav>
     <div class="container">
         <div class="logos">
